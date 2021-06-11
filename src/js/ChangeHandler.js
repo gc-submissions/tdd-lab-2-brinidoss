@@ -6,8 +6,8 @@
 class ChangeHandler {
     
     constructor(amountDue) {
-        this.amountDue = null;
-        this.cashTendered = null;
+        this.amountDue = amountDue;
+        this.cashTendered = 0;
     }
 
     /**
@@ -16,6 +16,15 @@ class ChangeHandler {
      */
     insertCoin(type) {
       // TODO
+      if (type === 'quarter') {
+        this.cashTendered = this.cashTendered + 25;
+      } else if (type === 'dime') {
+        this.cashTendered = this.cashTendered + 10;
+      } else if (type === 'nickel') {
+        this.cashTendered = this.cashTendered + 5;
+      } else if (type === 'penny') {
+        this.cashTendered = this.cashTendered + 1;
+      } 
     }
 
     /**
@@ -27,6 +36,13 @@ class ChangeHandler {
 
     giveChange() {
         // TODO return the correct change in the following format...
+        //if else down below thanks to Kyle
+        if (cashTendered >= 25) {
+          this.cashTendered -= 25;
+          obj.quarters++;
+        } else if (this.cashTendered >= 10) {
+
+        }
         return {
             quarters: 0,
             dimes: 0,
