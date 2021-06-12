@@ -54,7 +54,7 @@ class ChangeHandler {
           nickels: 0,
           pennies: 0
         }
-        if (this.cashTendered > this.amountDue) {
+        if (this.cashTendered >= this.amountDue) {
           //console.log(changeHandler32);
           this.cashTendered -= this.amountDue;
           this.amountDue -= this.amountDue;
